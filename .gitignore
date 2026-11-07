@@ -1,3 +1,9 @@
+# npm config (may contain auth tokens or registry credentials)
+.npmrc
+
+# Generated lockfile
+package-lock.json
+
 # Logs
 logs
 *.log
