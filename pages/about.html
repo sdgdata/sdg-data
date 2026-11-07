@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- ===============================================-->
+    <!--    Document Title-->
+    <!-- ===============================================-->
+    <title>SDG Data Solutions</title>
+
+
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicons/favicon.ico">
+    <link rel="manifest" href="assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <link href="assets/lib/loaders.css/loaders.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Mono%7cPT+Serif:400,400i%7cLato:100,300,400,700,800,900" rel="stylesheet">
+    <link href="assets/lib/fancybox/jquery.fancybox.min.css" rel="stylesheet">
+    <link href="assets/css/theme.css" rel="stylesheet">
+
+  </head>
+
+
+  <body class="has-sidemenu overflow-hidden-x">
+
+
+    <!--===============================================-->
+    <!--    Fancynav-->
+    <!--===============================================-->
+    <nav class="fancynavbar" data-zanim-lg='{"from":{"opacity":1,"x":70},"to":{"opacity":1,"x":0},"ease":"CubicBezier","duration":0.8,"delay":0.3}' data-zanim-xs='{"from":{"opacity":1,"y":-48},"to":{"opacity":1,"y":0},"ease":"CubicBezier","duration":0.8,"delay":0.3}'
+      data-zanim-trigger="scroll" data-exclusive="true">
+      <div class="fancynavbar-togglerbar bg-black">
+        <a class="i18n fancynavbar-brand" href="index.html">
+          <img class="fancynavbar-brand-img" src="assets/img/logo/sdg.png" alt="SDG logo" width="30" height="30" data-zanim-lg='{"from":{"opacity":0,"x":45},"to":{"opacity":1,"x":0},"ease":"CubicBezier","duration":0.8,"delay":0.4}' data-zanim-trigger="scroll"/>
+        </a>
+        <div class="fancynavbar-toggler">
+          <svg class="fancynavbar-toggler-icon" viewBox="0 0 70 70" xmlns="http://www.w3.org/2000/svg" data-zanim-lg='{"from":{"opacity":0,"x":45},"to":{"opacity":1,"x":0},"ease":"CubicBezier","duration":0.8,"delay":0.5}' data-zanim-trigger="scroll">
+            <path id="path-top" d="M20,25c0,0,22,0,30,0c16,0,18.89,40.71-.15,21.75C38.7,35.65,19.9,16.8,19.9,16.8"></path>
+            <path id="path-middle" d="M20,32h30"></path>
+            <path id="path-bottom" d="M19.9,46.98c0,0,18.8-18.85,29.95-29.95C68.89-1.92,66,38.78,50,38.78c-8,0-30,0-30,0"></path>
+          </svg>
+        </div>
+        <div class="fancynavbar-addon" data-zanim-lg='{"from":{"opacity":0,"x":45},"to":{"opacity":1,"x":0},"ease":"CubicBezier","duration":0.8,"delay":0.4}' data-zanim-trigger="scroll">
+          <a class="fancynavbar-addon-item" href="#languageModal" data-toggle="modal"><span class="i18n" data-text-id="all-language">EN</span></a>
+        </div>
+      </div>
+      <div class="fancynavbar-collapse" style="transform: matrix(1, 0, 0, 1, 0, 0);">
+        <ul class="fancynavbar-nav">
+          <li class="fancynav-item">
+            <a class="i18n fancynav-link" href="index.html" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"><span class="i18n fancynav-link-content" data-text-id="menu-index">home</span></a>
+          </li>          
+          <li class="fancynav-item">
+            <a class="i18n fancynav-link" href="services.html" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"><span class="i18n fancynav-link-content" data-text-id="menu-services">services</span></a>
+          </li>
+          <li class="fancynav-item">
+            <a class="i18n fancynav-link" href="portfolio.html" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"><span class="i18n fancynav-link-content" data-text-id="menu-portfolio">portfolio</span></a>
+          </li>          
+          <li class="fancynav-item">
+            <a class="i18n fancynav-link" href="about.html" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"><span class="i18n fancynav-link-content" data-text-id="menu-about">about</span></a>
+          </li>
+          <li class="fancynav-item">
+            <a class="i18n fancynav-link" href="contact.html" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"><span class="i18n fancynav-link-content" data-text-id="menu-contact">contact</span></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!--===============================================-->
+    <!--    End of Fancynav-->
+    <!--===============================================-->
+
+
+
+    <!-- ===============================================-->
+    <!--    Main Content-->
+    <!-- ===============================================-->
+    <main class="main min-vh-100" id="top">
+
+
+      <!-- ============================================-->
+      <!-- Preloader ==================================-->
+      <div class="preloader" id="preloader">
+        <div class="loader">
+          <div class="line-scale-pulse-out-rapid">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+      <!-- ============================================-->
+      <!-- End of Preloader ===========================-->
+
+
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+      <section class="py-0" id="page-about">
+
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-6 px-0 order-lg-2">
+              <div class="sticky-top vh-lg-100 py-9">
+                <div class="bg-holder" style="background-image:url(assets/img/about.jpg);" data-zanim-trigger="scroll" data-zanim-lg='{"animation":"zoom-out-slide-left","delay":0.4}'>
+                </div>
+                <!--/.bg-holder-->
+
+              </div>
+            </div>
+            <div class="col-lg-6 bg-white py-6">
+              <div class="row h-100 align-items-center justify-content-center">
+                <div class="col-lg-10">
+                  <div class="mb-5">
+                    <div class="overflow-hidden">
+                      <h1 class="i18n text-underline fs-4 fs-md-5 mb-0" data-zanim-xs='{"delay":0.4}' data-zanim-trigger="scroll" data-text-id="about-title">our story</h1>
+                    </div>
+                  </div>
+                  <p class="i18n dropcap" data-zanim-xs='{"delay":0.5}' data-zanim-trigger="scroll" data-text-id="about-subtitle">We are a team of web, mobile, and IT software and database developers based in Switzerland and the United States.  Our specialty is collection, analysis, and visualization of global, regional, and country-level health data.
+                    For over a decade, our results have earned us a trusted reputation and excellent client retention rate.  Our customer-centric approach permeates every level of our work, and delivering quality, reasonably-priced results is what we do best.</p>
+                  <div class="row mt-5">
+                    <div class="col-6">
+                      <img class="rounded img-fluid" src="assets/img/about-02.jpg" alt="" data-zanim-xs='{"delay":0.6,"animation":"zoom-in"}' data-zanim-trigger="scroll" />
+                    </div>
+                    <div class="col-6">
+                      <img class="rounded img-fluid" src="assets/img/about-01.jpg" alt="" data-zanim-xs='{"delay":0.7,"animation":"zoom-in"}' data-zanim-trigger="scroll" />
+                    </div>
+                  </div>
+                  <blockquote class="blockquote text-center my-6 border p-5 px-xl-7 border-300 rounded" data-zanim-xs='{"delay":0.1}' data-zanim-trigger="scroll">
+                    <p class="blockquote-content">That’s amazing – it’s so much more user-friendly than databases I’ve worked with in the past!</p>
+                    <footer class="blockquote-footer"><span class="text-900">Caroline,</span> Regional Data Coordinator.</footer>
+                  </blockquote>
+                </div>
+                <div class="col-xl-4 text-center" data-zanim-xs='{"delay":0.2}' data-zanim-trigger="scroll">
+                  <h2 class="fs-3 fs-sm-4 mb-1">1 million</h2>
+                  <p class="i18n font-italic text-500" data-text-id="about-lines">Total Lines of Code</p>
+                </div>
+                <div class="col-xl-4 text-center mt-4 mt-xl-0" data-zanim-xs='{"delay":0.2}' data-zanim-trigger="scroll">
+                  <h2 class="fs-3 fs-sm-4 mb-1 text-danger">21000</h2>
+                  <p class="i18n font-italic text-500" data-text-id="about-coffee">Cups of Coffee</p>
+                </div>
+                <div class="col-lg-10 mt-6">
+                  <img class="rounded img-fluid" src="assets/img/about-03.jpg" alt="" data-zanim-xs='{"animation":"zoom-in","delay":0.1}' data-zanim-trigger="scroll" />
+                  <div class="row mt-6">
+                    <div class="col-md col-lg-12 col-xl">
+                      <div class="overflow-hidden">
+                        <h6 class="i18n text-uppercase ls" data-zanim-xs='{"delay":0.1}' data-zanim-trigger="scroll" data-text-id="about-history">HISTORY</h6>
+                      </div>
+                      <div class="overflow-hidden">
+                        <p class="i18n text-justify" data-zanim-xs='{"delay":0.2}' data-zanim-trigger="scroll" data-text-id="about-history-text">We started at a time when Excel spreadsheets were the norm for collecting world-wide data.  Our initial project successes quickly spread to other areas with the same business need: web-based, secure data collection with central and regional management of users and surveys.  Just as important was access to response data in multiple formats, notably Stata, Excel, ODBC, and direct data editing of online data.  This is what we do, and we do it well.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end of .container-->
+
+      </section>
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+
+
+    </main>
+    <!-- ===============================================-->
+    <!--    End of Main Content-->
+    <!-- ===============================================-->
+
+
+    <!--===============================================-->
+    <!--    Footer-->
+    <!--===============================================-->
+    <footer class="footer bg-black text-600 py-4 text-sans-serif text-center overflow-hidden" data-zanim-timeline="{}" data-zanim-trigger="scroll">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-4 order-lg-2">
+              <a class="indicator indicator-up" href="#top" data-fancyscroll="data-fancyscroll"><span class="indicator-arrow indicator-arrow-one" data-zanim-xs='{"from":{"opacity":0,"y":15},"to":{"opacity":1,"y":-5,"scale":1},"ease":"Back.easeOut","duration":0.4,"delay":0.9}'></span><span class="indicator-arrow indicator-arrow-two" data-zanim-xs='{"from":{"opacity":0,"y":15},"to":{"opacity":1,"y":-5,"scale":1},"ease":"Back.easeOut","duration":0.4,"delay":1.05}'></span></a>
+            </div>
+            <div class="col-lg-4 text-lg-left mt-4 mt-lg-0">
+              <p class="fs--1 text-uppercase ls font-weight-bold mb-0">
+                Copyright &copy; <script>document.write(new Date().getFullYear())</script> SDG Data Solutions&trade;</p>
+            </div>
+            <div class="col-lg-4 text-lg-right order-lg-2 mt-2 mt-lg-0">
+              <p class="fs--1 text-uppercase ls font-weight-bold mb-0"></p>
+            </div>
+          </div>
+        </div>
+      </footer>
+  
+  
+      <!--===============================================-->
+      <!--    Modal for language selection-->
+      <!--===============================================-->
+      <!-- Modal-->
+      <div class="modal fade fade-in" id="languageModal" tabindex="-1" role="dialog" aria-labelledby="languageModalTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-xs" role="document">
+            <div class="modal-content bg-black">
+              <div class="modal-body text-center p-0">
+                <button class="close text-white position-absolute t-0 r-0 times-icon mt-2 mr-2 p-2" type="button" data-dismiss="modal" aria-label="Close"></button>
+                <ul class="list-unstyled pl-0 my-0 py-4 text-sans-serif">
+                  <li>
+                    <a id="en" class="language pt-1 d-block text-500 text-white font-weight-bold" href="?lang=en" onclick="i18next.changeLanguage('en');changeSelected('en')">English</a>
+                  </li>
+                  <li>
+                    <a id="fr" class="language pt-1 d-block text-500" href="?lang=fr" onclick="i18next.changeLanguage('fr');changeSelected('fr')">Français</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- ===============================================-->
+        <!--    JavaScript -->
+        <!-- ===============================================-->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/popper.min.js"></script>
+        <script src="assets/js/bootstrap.js"></script>
+        <script src="assets/js/plugins.js"></script>
+        <script src="assets/lib/loaders.css/loaders.css.js"></script>
+        <script src="assets/js/stickyfill.min.js"></script>
+        <script src="assets/lib/is_js/is.min.js"></script>
+        <script src="assets/lib/jtap/jquery.tap.js"></script>
+        <script src="assets/js/rellax.min.js"></script>
+        <script src="assets/lib/fancybox/jquery.fancybox.min.js"></script>
+        <script src="assets/js/theme.js"></script>
+        <script src="assets/js/app.js"></script>
+    
+        <!-- Add multilingual -->
+        <script src="https://unpkg.com/i18next/i18next.js"></script>
+        <script src="https://unpkg.com/i18next-xhr-backend/i18nextXHRBackend.js"></script>
+        <script>
+    
+        var lang = getParameterByName('lang');
+        if(!lang){ lang = 'en' }
+    
+        $(document).ready(function(){
+          changeSelected(lang);
+          changeLanguageLinks();
+        });
+    
+        function changeLanguageLinks(){
+          const params = new URLSearchParams(location.search);
+          params.set('lang', lang);
+          
+          $('a.i18n').each(function(){ 
+            var url = $(this).attr('href'); 
+            url.split('?')[1];
+            $(this).attr('href', url + '?' + params.toString()); 
+          });
+        }
+    
+        i18next
+        .use(i18nextXHRBackend)
+        .init({
+          lng: lang,
+          fallbackLng: 'en',
+          debug: false,
+          ns: ['index'],
+          defaultNS: 'index',
+          backend: {
+            loadPath: 'assets/text/{{lng}}/{{ns}}.json'
+          }
+        }, function(err, t) {
+          // init set content
+          updateContent();
+        });
+    
+        function updateContent() {
+          var elements = document.querySelectorAll('.i18n');  
+            for (var i = 0; i < elements.length; i++) {
+            var element = elements[i];
+            var text_key = element.getAttribute('data-text-id');
+    
+            if (text_key) element.innerHTML = i18next.t(text_key);
+          }
+        }
+    
+        function changeLng(lng) {
+          i18next.changeLanguage(lng);         
+        }
+    
+        i18next.on('languageChanged', () => {
+          updateContent();
+        });
+    
+        function changeSelected(lng) {
+          if(lng){      
+            $('.language').removeClass('text-white font-weight-bold'); 
+            var lngVar = document.getElementById(lng);
+            lngVar.className += ' text-white font-weight-bold'; 
+            //$("#" + lng).addClass('text-white font-weight-bold'); 
+          }
+        }
+    
+      </script>
+
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-J7FPE7E0JH"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-J7FPE7E0JH');
+      </script>
+    
+      </body>
+    
+    </html>
