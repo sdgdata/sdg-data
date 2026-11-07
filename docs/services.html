@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- ===============================================-->
+    <!--    Document Title-->
+    <!-- ===============================================-->
+    <title>SDG Data Solutions</title>
+
+
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicons/favicon.ico">
+    <link rel="manifest" href="assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <link href="assets/lib/loaders.css/loaders.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Mono%7cPT+Serif:400,400i%7cLato:100,300,400,700,800,900" rel="stylesheet">
+    <link href="assets/lib/fancybox/jquery.fancybox.min.css" rel="stylesheet">
+    <link href="assets/css/theme.css" rel="stylesheet">
+
+  </head>
+
+
+  <body class="has-sidemenu overflow-hidden-x">
+
+
+    <!--===============================================-->
+    <!--    Fancynav-->
+    <!--===============================================-->
+    <nav class="fancynavbar" data-zanim-lg='{"from":{"opacity":1,"x":70},"to":{"opacity":1,"x":0},"ease":"CubicBezier","duration":0.8,"delay":0.3}' data-zanim-xs='{"from":{"opacity":1,"y":-48},"to":{"opacity":1,"y":0},"ease":"CubicBezier","duration":0.8,"delay":0.3}'
+      data-zanim-trigger="scroll" data-exclusive="true">
+      <div class="fancynavbar-togglerbar bg-black">
+        <a class="i18n fancynavbar-brand" href="index.html">
+          <img class="fancynavbar-brand-img" src="assets/img/logo/sdg.png" alt="SDG logo" width="30" height="30" data-zanim-lg='{"from":{"opacity":0,"x":45},"to":{"opacity":1,"x":0},"ease":"CubicBezier","duration":0.8,"delay":0.4}' data-zanim-trigger="scroll"/>
+        </a>
+        <div class="fancynavbar-toggler">
+          <svg class="fancynavbar-toggler-icon" viewBox="0 0 70 70" xmlns="http://www.w3.org/2000/svg" data-zanim-lg='{"from":{"opacity":0,"x":45},"to":{"opacity":1,"x":0},"ease":"CubicBezier","duration":0.8,"delay":0.5}' data-zanim-trigger="scroll">
+            <path id="path-top" d="M20,25c0,0,22,0,30,0c16,0,18.89,40.71-.15,21.75C38.7,35.65,19.9,16.8,19.9,16.8"></path>
+            <path id="path-middle" d="M20,32h30"></path>
+            <path id="path-bottom" d="M19.9,46.98c0,0,18.8-18.85,29.95-29.95C68.89-1.92,66,38.78,50,38.78c-8,0-30,0-30,0"></path>
+          </svg>
+        </div>
+        <div class="fancynavbar-addon" data-zanim-lg='{"from":{"opacity":0,"x":45},"to":{"opacity":1,"x":0},"ease":"CubicBezier","duration":0.8,"delay":0.4}' data-zanim-trigger="scroll">
+          <a class="fancynavbar-addon-item" href="#languageModal" data-toggle="modal"><span class="i18n" data-text-id="all-language">EN</span></a>
+        </div>
+      </div>
+      <div class="fancynavbar-collapse" style="transform: matrix(1, 0, 0, 1, 0, 0);">
+        <ul class="fancynavbar-nav">
+          <li class="fancynav-item">
+            <a class="i18n fancynav-link" href="index.html" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"><span class="i18n fancynav-link-content" data-text-id="menu-index">home</span></a>
+          </li>          
+          <li class="fancynav-item">
+            <a class="i18n fancynav-link" href="services.html" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"><span class="i18n fancynav-link-content" data-text-id="menu-services">services</span></a>
+          </li>
+          <li class="fancynav-item">
+            <a class="i18n fancynav-link" href="portfolio.html" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"><span class="i18n fancynav-link-content" data-text-id="menu-portfolio">portfolio</span></a>
+          </li>          
+          <li class="fancynav-item">
+            <a class="i18n fancynav-link" href="about.html" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"><span class="i18n fancynav-link-content" data-text-id="menu-about">about</span></a>
+          </li>
+          <li class="fancynav-item">
+            <a class="i18n fancynav-link" href="contact.html" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"><span class="i18n fancynav-link-content" data-text-id="menu-contact">contact</span></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!--===============================================-->
+    <!--    End of Fancynav-->
+    <!--===============================================-->
+
+
+
+    <!-- ===============================================-->
+    <!--    Main Content-->
+    <!-- ===============================================-->
+    <main class="main min-vh-100" id="top">
+
+
+      <!-- ============================================-->
+      <!-- Preloader ==================================-->
+      <div class="preloader" id="preloader">
+        <div class="loader">
+          <div class="line-scale-pulse-out-rapid">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+      <!-- ============================================-->
+      <!-- End of Preloader ===========================-->
+
+
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+      <section class="py-0" id="page-services">
+
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-6 px-0 order-lg-2">
+              <div class="sticky-top vh-lg-100 py-9">
+                <div class="bg-holder" style="background-image:url(assets/img/headers/header-promotion.jpg);" data-zanim-trigger="scroll" data-zanim-lg='{"animation":"zoom-out-slide-left","delay":0.4}'>
+                </div>
+                <!--/.bg-holder-->
+
+              </div>
+            </div>
+            <div class="col-lg-6 bg-white py-6">
+              <div class="row h-100 align-items-center justify-content-center">
+                <div class="col-sm-11 col-md-8 col-lg-11 col-xl-9 px-xl-5">
+                  <div class="mb-5 mb-lg-7 oveflow-hidden">
+                    <h1 class="i18n text-underline fs-4 fs-md-5" data-zanim-xs='{"delay":0}' data-zanim-trigger="scroll" data-text-id="services-title">we do</h1>
+                  </div>
+                  <div class="media mb-5 card-service" data-zanim-timeline="{}" data-zanim-trigger="scroll">
+                    <div class="oveflow-hidden">
+                      <img class="mr-3 mr-sm-4" src="assets/img/icons/icon-coding.svg" alt="" width="50" data-zanim-xs='{"delay":0.2,"animation":"slide-right"}' />
+                    </div>
+                    <div class="media-body">
+                      <div class="overflow-hidden">
+                        <h4 class="i18n mb-2" data-zanim-xs='{"delay":0.1,"animation":"slide-right"}' data-text-id="services-web">web and mobile development</h4>
+                      </div>
+                      <div class="overflow-hidden">
+                        <p class="i18n mb-0" data-zanim-xs='{"delay":0.2,"animation":"slide-right"}' data-text-id="services-web-text">Data collection that is intuitive and cost-effective, including document uploads, metadata/footnotes, completeness checks, and multilingual. Secure, responsive design that works on any device and looks great.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="media mb-5 card-service" data-zanim-timeline="{}" data-zanim-trigger="scroll">
+                    <div class="oveflow-hidden">
+                      <img class="mr-3 mr-sm-4" src="assets/img/icons/animation.svg" alt="" width="50" data-zanim-xs='{"delay":0.2,"animation":"slide-right"}' />
+                    </div>
+                    <div class="media-body">
+                      <div class="overflow-hidden">
+                        <h4 class="i18n mb-2" data-zanim-xs='{"delay":0.1,"animation":"slide-right"}' data-text-id="services-database">database management</h4>
+                      </div>
+                      <div class="overflow-hidden">
+                        <p class="i18n mb-0" data-zanim-xs='{"delay":0.2,"animation":"slide-right"}' data-text-id="services-database-text">Web and mobile platforms provide the input but you need ways to access and export data.  We provide you with the tools to manage data through import templates and real-time data editing.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="media mb-5 card-service" data-zanim-timeline="{}" data-zanim-trigger="scroll">
+                    <div class="oveflow-hidden">
+                      <img class="mr-3 mr-sm-4" src="assets/img/icons/shape.svg" alt="" width="50" data-zanim-xs='{"delay":0.2,"animation":"slide-right"}' />
+                    </div>
+                    <div class="media-body">
+                      <div class="overflow-hidden">
+                        <h4 class="i18n mb-2" data-zanim-xs='{"delay":0.1,"animation":"slide-right"}' data-text-id="services-visualization">stunning visualizations</h4>
+                      </div>
+                      <div class="overflow-hidden">
+                        <p class="i18n mb-0" data-zanim-xs='{"delay":0.2,"animation":"slide-right"}' data-text-id="services-visualization-text">Maps, charts, or business intelligence solutions.  The key is interactivity with the users and effective story-telling.  Make your data beautiful.</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <button class="i18n btn btn-dark btn-sm mr-2 my-2" type="button" data-toggle="modal" data-target="#techModal" data-text-id="services-tech">Technology Expertise</button>
+                  <div class="modal fade fade-in" id="techModal" tabindex="-1" role="dialog" aria-labelledby="techModalLabel" aria-hidden="true">
+                     <div class="modal-dialog modal-dialog-centered" role="document">
+                       <div class="modal-content"> 
+                        <div class="modal-header"> 
+                          <h5 class="i18n modal-title" id="techModalLabel" data-text-id="services-tech">Technology Expertise</h5>
+                          <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span class="font-weight-light" aria-hidden="true">&times;</span></button>
+                        </div> 
+                        <div class="modal-body">
+                            <div class="container-fluid">
+                                <div class="row">
+                            <div class="col-md-6"> 
+                            <ul>
+                                <li>C#</li>
+                                <li>.NET MVC</li>
+                                <li>ASP.NET</li>
+                                <li>.NET WebApi</li>
+                                <li>SQL</li>
+                                <li>Windows Server</li>
+                                <li>Visual Studio</li>
+                                <li>Git</li>
+                                <li>SQL Server</li>
+                                <li>DB2</li>
+                                <li>MySQL</li>
+                                <li>PostgreSQL</li>
+                                <li>JavaScript</li>
+                                <li>HTML5</li>
+                                <li>CSS</li>
+                                <li>Sass</li>
+                                <li>BEM</li>
+                                <li>Agile</li>
+                                <li>Slack</li>
+                                <li>Aurelia</li>
+                                <li>Salesforce</li>
+                                <li>SOQL</li>
+                                <li>MDX</li>
+                                <li>Active Directory</li>
+                                <li>Group Policy Objects</li>
+                                <li>Auth0</li>
+                                <li>SAS</li>
+                            </ul>
+                            </div>
+                            <div class="col-md-6"> 
+                            <ul>
+                                <li>VMware</li>
+                                <li>Linux</li>
+                                <li>Docker</li>
+                                <li>DevExpress</li>
+                                <li>Xamarin</li>
+                                <li>UWP</li>
+                                <li>Tableau</li>
+                                <li>JSON</li>
+                                <li>XML</li>
+                                <li>Photoshop</li>
+                                <li>Node.js</li>
+                                <li>Bootstrap</li>
+                                <li>Materialize</li>
+                                <li>jQuery</li>
+                                <li>D3.js</li>
+                                <li>Google Cloud Platform Compute/Big Data/AI</li>
+                                <li>Amazon EC2/S3/RDS/Lambda</li>
+                                <li>Amazon Alexa</li>
+                                <li>Microsoft Azure</li>
+                                <li>DNS</li>
+                                <li>IIS</li>
+                                <li>GitHub</li>
+                                <li>Bitbucket</li>
+                                <li>Jira</li>
+                            </ul>
+                            </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button class="i18n btn btn-secondary btn-sm" type="button" data-dismiss="modal" data-text-id="all-close">Close</button>
+                        </div> 
+                      </div> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end of .container-->
+
+      </section>
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+
+
+    </main>
+    <!-- ===============================================-->
+    <!--    End of Main Content-->
+    <!-- ===============================================-->
+
+    <!--===============================================-->
+    <!--    Footer-->
+    <!--===============================================-->
+    <footer class="footer bg-black text-600 py-4 text-sans-serif text-center overflow-hidden" data-zanim-timeline="{}" data-zanim-trigger="scroll">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-4 order-lg-2">
+              <a class="indicator indicator-up" href="#top" data-fancyscroll="data-fancyscroll"><span class="indicator-arrow indicator-arrow-one" data-zanim-xs='{"from":{"opacity":0,"y":15},"to":{"opacity":1,"y":-5,"scale":1},"ease":"Back.easeOut","duration":0.4,"delay":0.9}'></span><span class="indicator-arrow indicator-arrow-two" data-zanim-xs='{"from":{"opacity":0,"y":15},"to":{"opacity":1,"y":-5,"scale":1},"ease":"Back.easeOut","duration":0.4,"delay":1.05}'></span></a>
+            </div>
+            <div class="col-lg-4 text-lg-left mt-4 mt-lg-0">
+              <p class="fs--1 text-uppercase ls font-weight-bold mb-0">
+                Copyright &copy; <script>document.write(new Date().getFullYear())</script> SDG Data Solutions&trade;</p>
+            </div>
+            <div class="col-lg-4 text-lg-right order-lg-2 mt-2 mt-lg-0">
+              <p class="fs--1 text-uppercase ls font-weight-bold mb-0"></p>
+            </div>
+          </div>
+        </div>
+      </footer>
+  
+  
+      <!--===============================================-->
+      <!--    Modal for language selection-->
+      <!--===============================================-->
+      <!-- Modal-->
+      <div class="modal fade fade-in" id="languageModal" tabindex="-1" role="dialog" aria-labelledby="languageModalTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-xs" role="document">
+            <div class="modal-content bg-black">
+              <div class="modal-body text-center p-0">
+                <button class="close text-white position-absolute t-0 r-0 times-icon mt-2 mr-2 p-2" type="button" data-dismiss="modal" aria-label="Close"></button>
+                <ul class="list-unstyled pl-0 my-0 py-4 text-sans-serif">
+                  <li>
+                    <a id="en" class="language pt-1 d-block text-500 text-white font-weight-bold" href="?lang=en" onclick="i18next.changeLanguage('en');changeSelected('en')">English</a>
+                  </li>
+                  <li>
+                    <a id="fr" class="language pt-1 d-block text-500" href="?lang=fr" onclick="i18next.changeLanguage('fr');changeSelected('fr')">Français</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- ===============================================-->
+        <!--    JavaScript -->
+        <!-- ===============================================-->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/popper.min.js"></script>
+        <script src="assets/js/bootstrap.js"></script>
+        <script src="assets/js/plugins.js"></script>
+        <script src="assets/lib/loaders.css/loaders.css.js"></script>
+        <script src="assets/js/stickyfill.min.js"></script>
+        <script src="assets/lib/is_js/is.min.js"></script>
+        <script src="assets/lib/jtap/jquery.tap.js"></script>
+        <script src="assets/js/rellax.min.js"></script>
+        <script src="assets/lib/fancybox/jquery.fancybox.min.js"></script>
+        <script src="assets/js/theme.js"></script>
+        <script src="assets/js/app.js"></script>
+    
+        <!-- Add multilingual -->
+        <script src="https://unpkg.com/i18next/i18next.js"></script>
+        <script src="https://unpkg.com/i18next-xhr-backend/i18nextXHRBackend.js"></script>
+        <script>
+    
+        var lang = getParameterByName('lang');
+        if(!lang){ lang = 'en' }
+    
+        $(document).ready(function(){
+          changeSelected(lang);
+          changeLanguageLinks();
+        });
+    
+        function changeLanguageLinks(){
+          const params = new URLSearchParams(location.search);
+          params.set('lang', lang);
+          
+          $('a.i18n').each(function(){ 
+            var url = $(this).attr('href'); 
+            url.split('?')[1];
+            $(this).attr('href', url + '?' + params.toString()); 
+          });
+        }
+    
+        i18next
+        .use(i18nextXHRBackend)
+        .init({
+          lng: lang,
+          fallbackLng: 'en',
+          debug: false,
+          ns: ['index'],
+          defaultNS: 'index',
+          backend: {
+            loadPath: 'assets/text/{{lng}}/{{ns}}.json'
+          }
+        }, function(err, t) {
+          // init set content
+          updateContent();
+        });
+    
+        function updateContent() {
+          var elements = document.querySelectorAll('.i18n');  
+            for (var i = 0; i < elements.length; i++) {
+            var element = elements[i];
+            var text_key = element.getAttribute('data-text-id');
+    
+            if (text_key) element.innerHTML = i18next.t(text_key);
+          }
+        }
+    
+        function changeLng(lng) {
+          i18next.changeLanguage(lng);         
+        }
+    
+        i18next.on('languageChanged', () => {
+          updateContent();
+        });
+    
+        function changeSelected(lng) {
+          if(lng){      
+            $('.language').removeClass('text-white font-weight-bold'); 
+            var lngVar = document.getElementById(lng);
+            lngVar.className += ' text-white font-weight-bold'; 
+            //$("#" + lng).addClass('text-white font-weight-bold'); 
+          }
+        }
+    
+      </script>
+
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-J7FPE7E0JH"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-J7FPE7E0JH');
+      </script> 
+
+      </body>
+    
+    </html>

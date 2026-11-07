@@ -1,0 +1,6 @@
+<svg viewBox="0 0 500 500" role="img" xmlns="http://www.w3.org/2000/svg">
+  <g id="s">
+    <circle stroke="darkgray" stroke-width="1px" fill="lightgray"  cx="250" cy="250" r="245"/>
+    <text font-size="18em" text-anchor="middle" dominant-baseline="central" x="50%" y="50%">S</text>
+  </g>
+</svg>

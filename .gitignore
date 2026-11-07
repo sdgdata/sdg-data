@@ -4,9 +4,6 @@
 # Generated lockfile
 package-lock.json
 
-# Build output
-docs/
-
 # Logs
 logs
 *.log
