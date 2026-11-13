@@ -1560,20 +1560,6 @@ spUtils.$document.ready(() => {
 /*-----------------------------------------------
 |   Pre-loader
 -----------------------------------------------*/
-$.holdReady(true);
-
-// Release holdReady when first section images load, or after 2s max to prevent
-// stalling on browsers (e.g. Firefox) where imagesLoaded may not fire.
-var holdReleased = false;
-function releaseHold() {
-  if (!holdReleased) {
-    holdReleased = true;
-    $.holdReady(false);
-  }
-}
-setTimeout(releaseHold, 2000);
-$($('main section')[0]).imagesLoaded({ background: '.bg-holder' }, releaseHold);
-
 spUtils.$document.ready(() => {
   const $preloader = $('#preloader');
   $preloader.addClass('loaded');
@@ -2167,14 +2153,14 @@ const breakPointConst = spUtils.getCurrentScreanBreakpoint();
       });
       return index;
     });
+  });
 
-    // Re-check on window load so elements already in view get animated
-    // after fonts/images finish painting (fixes Firefox/Edge layout timing)
-    spUtils.$window.on('load', () => {
-      $("*[data-zanim-trigger = 'scroll']").map((index, value) => {
-        triggerZanimation($(value));
-        return index;
-      });
+  // Re-check on window load (outside document.ready) so it fires even if
+  // document.ready was delayed, ensuring in-viewport elements get animated.
+  spUtils.$window.on('load', () => {
+    $("*[data-zanim-trigger = 'scroll']").map((index, value) => {
+      triggerZanimation($(value));
+      return index;
     });
   });
 

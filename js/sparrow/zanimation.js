@@ -315,14 +315,14 @@ const breakPointConst = spUtils.getCurrentScreanBreakpoint();
       });
       return index;
     });
+  });
 
-    // Re-check on window load so elements already in view get animated
-    // after fonts/images finish painting (fixes Firefox/Edge layout timing)
-    spUtils.$window.on('load', () => {
-      $("*[data-zanim-trigger = 'scroll']").map((index, value) => {
-        triggerZanimation($(value));
-        return index;
-      });
+  // Re-check on window load (outside document.ready) so it fires even if
+  // document.ready was delayed, ensuring in-viewport elements get animated.
+  spUtils.$window.on('load', () => {
+    $("*[data-zanim-trigger = 'scroll']").map((index, value) => {
+      triggerZanimation($(value));
+      return index;
     });
   });
 
