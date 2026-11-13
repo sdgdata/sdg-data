@@ -1850,6 +1850,9 @@ global TimelineMax, TweenMax, CustomEase
 
 CustomEase.create('CubicBezier', '.77,0,.18,1');
 
+// In Firefox, skip animations entirely — jump straight to final state
+const isFirefox = window.is.firefox();
+
 const filterBlur = () => {
   let blur = 'blur(5px)';
   const isIpadIphoneMacFirefox = (window.is.ios() || window.is.mac()) && window.is.firefox();
@@ -2086,6 +2089,14 @@ const breakPointConst = spUtils.getCurrentScreanBreakpoint();
     (controller.ease && (controller.to.ease = controller.ease) && controller.to.ease)
     || (controller.to.ease = options.ease);
 
+    // In Firefox/Edge, skip the animation entirely — snap straight to the final state
+    // so GSAP never applies opacity:0 as an inline style that then fails to animate away.
+    if (isFirefox || window.is.edge()) {
+      controller.duration = 0;
+      controller.delay = 0;
+      controller.from = $.extend({}, controller.to);
+    }
+
     return controller;
   };
   /*-----------------------------------------------
@@ -2094,6 +2105,17 @@ const breakPointConst = spUtils.getCurrentScreanBreakpoint();
 
   jQuery.fn.zanimation = function zanim(callback) {
     const $this = $(this);
+
+    // In Firefox/Edge skip GSAP entirely — just make everything visible immediately.
+    // GSAP's fromTo() sets inline opacity:0 on elements when the timeline is paused,
+    // and the scroll-triggered play() often never fires in these browsers.
+    if (isFirefox || window.is.edge()) {
+      $this.css('opacity', 1);
+      $this.find('[data-zanim-xs], [data-zanim-sm], [data-zanim-md], [data-zanim-lg], [data-zanim-xl]')
+        .css({ opacity: 1, transform: 'none' });
+      callback(new TimelineMax());
+      return;
+    }
 
     /*-----------------------------------------------
     |   For Timeline
