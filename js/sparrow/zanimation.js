@@ -315,6 +315,15 @@ const breakPointConst = spUtils.getCurrentScreanBreakpoint();
       });
       return index;
     });
+
+    // Re-check on window load so elements already in view get animated
+    // after fonts/images finish painting (fixes Firefox/Edge layout timing)
+    spUtils.$window.on('load', () => {
+      $("*[data-zanim-trigger = 'scroll']").map((index, value) => {
+        triggerZanimation($(value));
+        return index;
+      });
+    });
   });
 
 }(jQuery));
