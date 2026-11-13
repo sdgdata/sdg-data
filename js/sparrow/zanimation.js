@@ -268,6 +268,17 @@ const breakPointConst = spUtils.getCurrentScreanBreakpoint();
   jQuery.fn.zanimation = function zanim(callback) {
     const $this = $(this);
 
+    // In Firefox/Edge skip GSAP entirely — just make everything visible immediately.
+    // GSAP's fromTo() sets inline opacity:0 on elements when the timeline is paused,
+    // and the scroll-triggered play() often never fires in these browsers.
+    if (isFirefox || window.is.edge()) {
+      $this.css('opacity', 1);
+      $this.find('[data-zanim-xs], [data-zanim-sm], [data-zanim-md], [data-zanim-lg], [data-zanim-xl]')
+        .css({ opacity: 1, transform: 'none' });
+      callback(new TimelineMax());
+      return;
+    }
+
     /*-----------------------------------------------
     |   For Timeline
     -----------------------------------------------*/
