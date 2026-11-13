@@ -413,6 +413,7 @@ gulp.task('build', gulp.series(
   'copy:dependency',
   'scss:min',
   'js:build',
+  () => gulp.src('js/app.js').pipe(gulp.dest('pages/assets/js')),
   () => gulp.src('pages/**/*').pipe(gulp.dest('docs')),
 ));
 
