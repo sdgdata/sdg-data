@@ -4,6 +4,12 @@
 // Firefox fixed
 .firefox{
   .dropcap:first-letter{ margin-top: 0.175em; }
+
+  // overflow-x: hidden on <body> breaks position:fixed in Firefox because
+  // the body becomes the scroll container. Move the clipping to <html>
+  // and restore the body so fixed elements stay viewport-relative.
+  overflow-x: hidden;
+  body.overflow-hidden-x { overflow-x: visible; }
 }
 
 

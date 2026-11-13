@@ -203,7 +203,7 @@ gulp.task('scss:min', () => gulp.src(Paths.SCSS.THEME)
     browsers: ['last 5 versions'],
     cascade: false,
   }))
-  .pipe(cleanCSS({ compatibility: 'ie9' }))
+  .pipe(cleanCSS({ compatibility: 'ie9', level: { 1: { removeVendorPrefixes: false } } }))
   .pipe(rename({ suffix: '.min' }))
   .pipe(sourcemaps.write('.'))
   .pipe(plumber.stop())
@@ -406,7 +406,7 @@ gulp.task('serve', () => {
 
 
 /*-----------------------------------------------
-|   Build (compile everything into dist/)
+|   Build (compile everything into docs/ for GitHub Pages)
 -----------------------------------------------*/
 gulp.task('build', gulp.series(
   'clean',
