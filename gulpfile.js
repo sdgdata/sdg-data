@@ -254,28 +254,17 @@ gulp.task('scss:rtl:min', () => gulp.src(Paths.SCSS.THEME)
 |   JavaScript
 -----------------------------------------------*/
 // Safe _typeof that avoids Firefox "too much recursion" from Babel's self-referencing helper
+// Safe non-recursive _typeof for unminified output (pre-uglify)
 const SAFE_TYPEOF = 'function _typeof(o){if(typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"){_typeof=function _typeof(o){return typeof o}}else{_typeof=function _typeof(o){return o&&typeof Symbol==="function"&&o.constructor===Symbol&&o!==Symbol.prototype?"symbol":typeof o}}return _typeof(o)}';
 const TYPEOF_REGEX = /^function _typeof\([^)]+\)\s*\{[^\n]+\n/m;
+// Safe non-recursive _typeof for minified output (post-uglify) — uglify regenerates the pattern
+const SAFE_TYPEOF_MIN = 'function _typeof(o){return(_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(o){return typeof o}:function(o){return o&&"function"==typeof Symbol&&o.constructor===Symbol&&o!==Symbol.prototype?"symbol":typeof o})(o)}';
+const TYPEOF_MIN_REGEX = /function _typeof\([a-z]\)\{return\(_typeof=[^}]+\}\)\([a-z]\)\}/;
 
+// Bootstrap source JS is already ES5 — skip Babel to avoid the recursive _typeof helper
 gulp.task('js:bootstrap', () => gulp.src(Paths.JS.BOOTSTRAP)
   .pipe(concat('bootstrap.js'))
   .pipe(replace(/^(export|import).*/gm, ''))
-  .pipe(babel({
-    compact: false,
-    presets: [
-      [
-        'env', {
-        modules: false,
-        loose: true,
-      },
-      ],
-    ],
-    plugins: [
-      process.env.PLUGINS && 'transform-es2015-modules-strip',
-      '@babel/plugin-proposal-object-rest-spread',
-    ].filter(Boolean),
-  }))
-  .pipe(replace(TYPEOF_REGEX, SAFE_TYPEOF))
   .pipe(gulp.dest(Paths.ASSETS.JS))
   .pipe(uglify())
   .pipe(rename({
@@ -315,25 +304,10 @@ gulp.task('js:sparrow', () => gulp.src(Paths.JS.SPARROW)
   .pipe(gulp.dest(Paths.ASSETS.JS))
   .pipe(reload({ stream: true })));
 
+// Plugins are already ES5 — skip Babel to avoid injecting the recursive _typeof helper
 gulp.task('js:plugins', () => gulp.src(Paths.JS.PLUGINS)
   .pipe(concat('plugins.js'))
   .pipe(replace(/^(export|import).*/gm, ''))
-  .pipe(babel({
-    compact: false,
-    presets: [
-      [
-        'env', {
-        modules: false,
-        loose: true,
-      },
-      ],
-    ],
-    plugins: [
-      process.env.PLUGINS && 'transform-es2015-modules-strip',
-      '@babel/plugin-proposal-object-rest-spread',
-    ].filter(Boolean),
-  }))
-  .pipe(replace(TYPEOF_REGEX, SAFE_TYPEOF))
   .pipe(gulp.dest(Paths.ASSETS.JS))
   .pipe(uglify())
   .pipe(rename({
