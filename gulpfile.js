@@ -67,6 +67,10 @@ const Paths = {
       FROM: 'node_modules/jquery/dist/jquery.min.js',
       TO: JS,
     },
+    'bootstrap-prebuilt': {
+      FROM: ['node_modules/bootstrap/dist/js/bootstrap.js', 'node_modules/bootstrap/dist/js/bootstrap.min.js'],
+      TO: JS,
+    },
     popper: {
       FROM: 'node_modules/popper.js/dist/umd/popper.min.js',
       TO: JS,
@@ -249,6 +253,10 @@ gulp.task('scss:rtl:min', () => gulp.src(Paths.SCSS.THEME)
 /*-----------------------------------------------
 |   JavaScript
 -----------------------------------------------*/
+// Safe _typeof that avoids Firefox "too much recursion" from Babel's self-referencing helper
+const SAFE_TYPEOF = 'function _typeof(o){if(typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"){_typeof=function _typeof(o){return typeof o}}else{_typeof=function _typeof(o){return o&&typeof Symbol==="function"&&o.constructor===Symbol&&o!==Symbol.prototype?"symbol":typeof o}}return _typeof(o)}';
+const TYPEOF_REGEX = /^function _typeof\([^)]+\)\s*\{[^\n]+\n/m;
+
 gulp.task('js:bootstrap', () => gulp.src(Paths.JS.BOOTSTRAP)
   .pipe(concat('bootstrap.js'))
   .pipe(replace(/^(export|import).*/gm, ''))
@@ -267,6 +275,7 @@ gulp.task('js:bootstrap', () => gulp.src(Paths.JS.BOOTSTRAP)
       '@babel/plugin-proposal-object-rest-spread',
     ].filter(Boolean),
   }))
+  .pipe(replace(TYPEOF_REGEX, SAFE_TYPEOF))
   .pipe(gulp.dest(Paths.ASSETS.JS))
   .pipe(uglify())
   .pipe(rename({
@@ -324,6 +333,7 @@ gulp.task('js:plugins', () => gulp.src(Paths.JS.PLUGINS)
       '@babel/plugin-proposal-object-rest-spread',
     ].filter(Boolean),
   }))
+  .pipe(replace(TYPEOF_REGEX, SAFE_TYPEOF))
   .pipe(gulp.dest(Paths.ASSETS.JS))
   .pipe(uglify())
   .pipe(rename({

@@ -1,5 +1,4 @@
-function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == _typeof(Symbol.iterator) ? function (o) { return typeof o === "undefined" ? "undefined" : _typeof(o); } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o === "undefined" ? "undefined" : _typeof(o); }, _typeof(o); }
-/*!
+function _typeof(o){if(typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"){_typeof=function _typeof(o){return typeof o}}else{_typeof=function _typeof(o){return o&&typeof Symbol==="function"&&o.constructor===Symbol&&o!==Symbol.prototype?"symbol":typeof o}}return _typeof(o)}/*!
  * imagesLoaded PACKAGED v4.1.4
  * JavaScript is all like "You images are done yet or what?"
  * MIT License
