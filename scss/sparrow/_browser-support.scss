@@ -10,6 +10,10 @@
   // and restore the body so fixed elements stay viewport-relative.
   overflow-x: hidden;
   body.overflow-hidden-x { overflow-x: visible; }
+
+  // zanimation elements start at opacity:0 and rely on GSAP to animate in.
+  // If the animation system doesn't fire in Firefox, make them visible immediately.
+  [data-zanim-trigger] { opacity: 1 !important; }
 }
 
 
