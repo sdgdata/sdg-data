@@ -1,4 +1,6 @@
 const del = require('del');
+const fs = require('fs');
+const path = require('path');
 const gulp = require('gulp');
 const plumber = require('gulp-plumber');
 const replace = require('gulp-replace');
@@ -177,6 +179,14 @@ const Paths = {
 |   Cleaning
 -----------------------------------------------*/
 gulp.task('clean', () => del(Paths.GENERATED, { force: true }));
+
+// Wipe docs/ except images — images are skipped during build if they already
+// exist, so cleaning them would force a re-copy on every build.
+gulp.task('clean:docs', () => del([
+  'docs/**/*',
+  '!docs/assets/img',
+  '!docs/assets/img/**',
+], { force: true }));
 
 
 /*-----------------------------------------------
@@ -392,13 +402,38 @@ gulp.task('serve', () => {
 /*-----------------------------------------------
 |   Build (compile everything into docs/ for GitHub Pages)
 -----------------------------------------------*/
+// Copy pages/ -> docs/, skipping images that already exist in docs/ (avoids
+// re-encoding binary files and flooding git diff with 300+ spurious changes).
+function copyPagesToDocs(done) {
+  const imgPattern = /\.(jpe?g|png|gif|ico|webp|svg|mp4|mp3|woff2?|ttf|eot|otf|zip|pdf)$/i;
+
+  gulp.src('pages/**/*', { encoding: false })
+    .pipe((() => {
+      const through = require('through2');
+      return through.obj(function filterExisting(file, enc, cb) {
+        if (file.isNull() || !imgPattern.test(file.path)) {
+          return cb(null, file);
+        }
+        const dest = path.join('docs', path.relative(path.resolve('pages'), file.path));
+        if (fs.existsSync(dest)) {
+          return cb(); // skip — already in docs/
+        }
+        return cb(null, file);
+      });
+    })())
+    .pipe(gulp.dest('docs'))
+    .on('end', done)
+    .on('error', done);
+}
+
 gulp.task('build', gulp.series(
   'clean',
+  'clean:docs',
   'copy:dependency',
   'scss:min',
   'js:build',
   () => gulp.src('js/app.js').pipe(gulp.dest('pages/assets/js')),
-  () => gulp.src('pages/**/*').pipe(gulp.dest('docs')),
+  copyPagesToDocs,
 ));
 
 

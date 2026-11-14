@@ -133,31 +133,42 @@
                   <!-- <script src="https://smtpjs.com/v3/smtp.js"></script> -->
                   <script type="text/javascript">
 
-                  window.onload = function() {
-                    document.getElementById('contact-form').addEventListener('submit', function(event) {
-                      event.preventDefault(); 
-                      var response = grecaptcha.getResponse();
-                      var user = document.forms['contact-form'].user_name.value;
-                      var email = document.forms['contact-form'].user_email.value;
-                      var message = document.forms['contact-form'].user_message.value;
+                  window.onload = function () {
+                    document.getElementById('contact-form').addEventListener('submit', function (event) {
+                      event.preventDefault();
+
+                      var token = grecaptcha.getResponse();
+                      if (!token) {
+                        alert('Please complete the reCAPTCHA.');
+                        return;
+                      }
+
                       $.ajax({
                         type: 'POST',
-                        url: `https://us-east1-sdg-data-295013.cloudfunctions.net/sdgds_recaptcha?token=${response}`,
-                        data: {"user" : user, "email" : email, "message" : message}
-                      }).done(function(result) {
-                        console.log(result.data.message);
-                        if(result.data.message == "true") {
+                        url: 'https://sdgds-recaptcha-200564468760.us-east1.run.app/recaptcha',
+                        contentType: 'application/json',
+                        data: JSON.stringify({
+                          'g-recaptcha-response': token,
+                          user_name: document.forms['contact-form'].user_name.value,
+                          user_email: document.forms['contact-form'].user_email.value,
+                          user_message: document.forms['contact-form'].user_message.value
+                        })
+                      }).done(function (result) {
+                        if (result.responseCode === 0) {
                           alert('Message sent');
                           document.getElementById('contact-form').reset();
+                          grecaptcha.reset();
+                        } else {
+                          alert('Form data missing or reCAPTCHA failed. Please try again.');
+                          grecaptcha.reset();
                         }
-                        else {
-                          alert("Form data missing or reCAPTCHA failed.  Please try again.")
-                        }
-                      }).fail(function() {
-                        alert("Message could not be sent.  Please try again.");
+                      }).fail(function () {
+                        alert('Message could not be sent. Please try again.');
+                        grecaptcha.reset();
                       });
-                    })
-                  }
+                    });
+                  };
+
                   </script> 
                 </div>
               </div>
